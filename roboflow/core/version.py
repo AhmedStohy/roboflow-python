@@ -87,7 +87,7 @@ class Version():
         sys.stdout.flush()
 
         with zipfile.ZipFile(location + "/roboflow.zip", 'r') as zip_ref:
-            for member in tqdm(zip_ref.infolist(), desc="Extracting Dataset Version Zip to " + location + " in " + model_format + ":"):
+            for member in tqdm(zip_ref.infolist(), disable=True ,desc="Extracting Dataset Version Zip to " + location + " in " + model_format + ":"):
                 try:
                     zip_ref.extract(member, location)
                 except zipfile.error as e:
