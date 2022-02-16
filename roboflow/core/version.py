@@ -82,7 +82,7 @@ class Version():
             sys.stdout.write("\r" + progress_message)
             sys.stdout.flush()
         
-        wget.download(link, out=location + "/roboflow.zip")
+        wget.download(link, out=location + "/roboflow.zip", bar=bar_progress)
         sys.stdout.write("\n")
         sys.stdout.flush()
 
